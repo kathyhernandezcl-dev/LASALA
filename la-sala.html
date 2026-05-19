@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LA SALA — Qué ajustar y qué sostener cuando el mercado no responde</title>
+  <meta name="description" content="90 minutos en vivo con Katherinne Paz. Un marco para distinguir cuándo el silencio del mercado pide movimiento y cuándo pide paciencia. Martes 2 de junio, 10:00 AM Chile." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       VARIABLES DE MARCA — LA SALA
+       ============================================================ */
+    :root {
+      /* Superficies */
+      --color-light:        #F5F1E8;
+      --color-light-deep:   #E8E0D0;
+      --color-dark:         #2D4D3D;
+      --color-dark-deep:    #1F3A2A;
+      --color-feature:      #000000;
+
+      /* Texto */
+      --color-text-on-light:       #1a1a1a;
+      --color-text-muted-on-light: #5a5a5a;
+      --color-text-on-dark:        #FFFFFF;
+      --color-text-muted-on-dark:  #D4C5B0;
+
+      /* Bordes */
+      --color-border-on-light: #D0C5B0;
+      --color-border-on-dark:  #4A5A50;
+
+      /* Acentos */
+      --color-accent-gold:    #D4A574;
+      --color-accent-wine:    #8B3A3A;
+      --color-accent-ink:     #000000;
+
+      /* Tipografía */
+      --font-display: 'Playfair Display', 'Times New Roman', Georgia, serif;
+      --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      /* Layout */
+      --radius: 4px;
+      --container: 1180px;
+      --section-pad-y: clamp(80px, 10vh, 140px);
+      --section-pad-x: clamp(20px, 4vw, 48px);
+    }
+
+    /* ============================================================
+       RESET / BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--color-text-on-light);
+      background: var(--color-light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.15;
+      margin: 0 0 0.6em;
+      letter-spacing: -0.01em;
+    }
+    h1 { font-size: clamp(2.4rem, 5.6vw, 4.6rem); font-weight: 700; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+    h3 { font-size: clamp(1.3rem, 2.2vw, 1.75rem); }
+    p  { margin: 0 0 1em; }
+    em { font-style: italic; }
+
+    :focus-visible {
+      outline: 2px solid var(--color-accent-gold);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    ::selection {
+      background: var(--color-accent-gold);
+      color: var(--color-accent-ink);
+    }
+
+    /* ============================================================
+       SISTEMA DE SECCIONES
+       ============================================================ */
+    .section {
+      --section-bg:           var(--color-light);
+      --section-text:         var(--color-text-on-light);
+      --section-text-muted:   var(--color-text-muted-on-light);
+      --section-border:       var(--color-border-on-light);
+      --section-card-bg:      var(--color-light-deep);
+
+      background: var(--section-bg);
+      color: var(--section-text);
+      padding: var(--section-pad-y) var(--section-pad-x);
+      position: relative;
+    }
+    .section.alt {
+      --section-bg:           var(--color-dark);
+      --section-text:         var(--color-text-on-dark);
+      --section-text-muted:   var(--color-text-muted-on-dark);
+      --section-border:       var(--color-border-on-dark);
+      --section-card-bg:      var(--color-dark-deep);
+    }
+    .section.feature {
+      --section-bg:           var(--color-feature);
+      --section-text:         var(--color-text-on-dark);
+      --section-text-muted:   var(--color-text-muted-on-dark);
+      --section-border:       var(--color-border-on-dark);
+      --section-card-bg:      var(--color-dark);
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--color-accent-wine);
+      margin-bottom: 1.5em;
+    }
+    .section.feature .eyebrow,
+    .section.alt .eyebrow {
+      color: var(--color-accent-gold);
+    }
+
+    .section-title {
+      max-width: 880px;
+      margin-bottom: 0.4em;
+    }
+    .section-lead {
+      max-width: 720px;
+      color: var(--section-text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 3em;
+    }
+
+    /* Detalle decorativo: filete dorado fino bajo títulos de sección */
+    .rule-gold {
+      display: block;
+      width: 56px;
+      height: 1px;
+      background: var(--color-accent-gold);
+      margin: 0 0 32px;
+    }
+
+    /* ============================================================
+       BOTONES
+       ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+      transition: transform 0.18s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-transform: none;
+    }
+    .btn-primary {
+      background: var(--color-accent-gold);
+      color: var(--color-accent-ink);
+      border-color: var(--color-accent-gold);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 14px 28px -16px rgba(212, 165, 116, 0.55);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #C49560;
+      border-color: #C49560;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+    .btn-ghost:hover {
+      border-color: var(--color-accent-gold);
+      color: var(--color-accent-gold);
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    /* ============================================================
+       BLOQUE 1 — HERO (feature, foto a sangre)
+       ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding: var(--section-pad-y) var(--section-pad-x);
+      background: var(--color-feature);
+      color: var(--color-text-on-dark);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 30% center;
+    }
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.30) 32%, rgba(0,0,0,0.05) 52%, rgba(0,0,0,0.65) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.0) 38%, rgba(0,0,0,0.65) 100%);
+      pointer-events: none;
+    }
+    /* Ligera tinta dorada cálida para reforzar el ambiente del pasillo */
+    .hero-warm {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: radial-gradient(60% 50% at 35% 45%, rgba(212, 165, 116, 0.12) 0%, rgba(212, 165, 116, 0) 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .brand-bar {
+      display: flex;
+      align-items: center;
+      padding-top: 8px;
+      margin-bottom: auto;
+    }
+    .brand-bar img {
+      height: 40px;
+      width: auto;
+      mix-blend-mode: screen;
+    }
+    .hero-copy {
+      max-width: 640px;
+      margin-left: auto;
+      padding-top: 60px;
+    }
+    .hero-copy .eyebrow {
+      color: var(--color-accent-gold);
+      margin-bottom: 1.2em;
+    }
+    .hero-copy h1 {
+      color: #fff;
+      margin-bottom: 0.5em;
+    }
+    .hero-copy h1 em {
+      color: var(--color-accent-gold);
+      font-style: italic;
+      font-weight: 700;
+    }
+    .hero-subline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+      color: #fff;
+      margin-bottom: 1em;
+      line-height: 1.35;
+    }
+    .hero-copy .lead {
+      color: var(--color-text-muted-on-dark);
+      font-size: 1.05rem;
+      max-width: 560px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-bg img { object-position: 50% center; }
+      .hero-scrim {
+        background:
+          linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.88) 100%);
+      }
+      .hero-copy {
+        margin-left: 0;
+        margin-top: 40px;
+        padding-top: 0;
+      }
+      .brand-bar { margin-bottom: 32px; }
+    }
+
+    /* ============================================================
+       BLOQUE 2 — ENTREGABLES (light, crema)
+       ============================================================ */
+    .deliverables {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .deliverable-card {
+      background: var(--section-card-bg);
+      border: 1px solid var(--section-border);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .deliverable-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px -28px rgba(0,0,0,0.25);
+    }
+    .deliverable-card .num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: var(--color-accent-ink);
+      background: var(--color-accent-gold);
+      display: inline-flex;
+      width: 60px;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 22px;
+      line-height: 1;
+      box-shadow: 0 6px 18px -10px rgba(212, 165, 116, 0.7);
+    }
+    .deliverable-card p {
+      margin: 0;
+      color: var(--section-text);
+      font-size: 1rem;
+    }
+    .deliverable-card strong {
+      font-weight: 600;
+      color: var(--section-text);
+    }
+
+    /* ============================================================
+       BLOQUE 3 — PARA QUIÉN ES / NO ES (alt, verde oscuro)
+       ============================================================ */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    @media (max-width: 768px) {
+      .audience-grid { grid-template-columns: 1fr; }
+    }
+    .audience-card {
+      background: var(--section-card-bg);
+      border: 1px solid var(--section-border);
+      border-radius: var(--radius);
+      padding: 40px 34px;
+      position: relative;
+    }
+    .audience-card.is-yes {
+      border-top: 3px solid var(--color-accent-gold);
+    }
+    .audience-card.is-no {
+      border-top: 3px solid var(--color-accent-wine);
+    }
+    .audience-card h3 {
+      font-style: italic;
+      margin-bottom: 1.2em;
+      color: var(--section-text);
+    }
+    .audience-card.is-yes h3 em { color: var(--color-accent-gold); font-style: italic; }
+    .audience-card.is-no h3 em  { color: var(--color-accent-wine); font-style: italic; }
+    .audience-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .audience-list li {
+      position: relative;
+      padding: 14px 0 14px 30px;
+      border-bottom: 1px solid var(--section-border);
+      color: var(--section-text);
+      font-size: 1rem;
+    }
+    .audience-list li:last-child { border-bottom: 0; }
+    .audience-list.is-yes li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 24px;
+      width: 16px;
+      height: 1.5px;
+      background: var(--color-accent-gold);
+    }
+    .audience-list.is-no li::before {
+      content: "×";
+      position: absolute;
+      left: 2px;
+      top: 12px;
+      color: var(--color-accent-wine);
+      font-weight: 500;
+      font-size: 1.15rem;
+    }
+
+    /* ============================================================
+       BLOQUE 4 — DETALLES OPERATIVOS (feature, negro)
+       ============================================================ */
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--section-border);
+      border: 1px solid var(--section-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .detail-item {
+      background: var(--section-bg);
+      padding: 34px 28px;
+    }
+    .detail-item .label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--color-accent-gold);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .detail-item .value {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      line-height: 1.3;
+      color: var(--section-text);
+    }
+    .detail-item .value.price {
+      font-weight: 700;
+      font-style: italic;
+      font-size: 2rem;
+      color: var(--color-accent-gold);
+    }
+    .detail-item .sub {
+      display: block;
+      margin-top: 8px;
+      color: var(--section-text-muted);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    /* ============================================================
+       BLOQUE 5 — QUIÉN CONDUCE (light, crema)
+       ============================================================ */
+    .host {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .host { grid-template-columns: 1fr; gap: 32px; }
+    }
+    .host-photo {
+      aspect-ratio: 4 / 5;
+      background: var(--section-card-bg);
+      border: 1px solid var(--section-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 30px 60px -40px rgba(0,0,0,0.35);
+    }
+    .host-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--color-accent-gold);
+      opacity: 0.35;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+    }
+    .host-photo .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--section-text-muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 16px;
+      text-align: center;
+    }
+    .host-body h3 {
+      font-style: italic;
+      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      margin-bottom: 0.6em;
+    }
+    .host-body p { color: var(--section-text); }
+    .host-body p + p { color: var(--section-text-muted); }
+    .host-body .signature {
+      display: inline-block;
+      margin-top: 8px;
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--color-accent-wine);
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================================================
+       BLOQUE 6 — OFERTA / CTA FINAL (feature, negro)
+       ============================================================ */
+    .offer-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .offer-card {
+      background: var(--section-card-bg);
+      border: 1px solid var(--color-accent-gold);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 40px 90px -50px rgba(212, 165, 116, 0.55);
+    }
+    .offer-banner {
+      background: var(--color-accent-gold);
+      color: var(--color-accent-ink);
+      text-align: center;
+      padding: 14px 16px;
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .offer-body {
+      padding: 52px 40px;
+      text-align: center;
+    }
+    .offer-pretitle {
+      font-size: 0.78rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--color-accent-gold);
+      margin-bottom: 1em;
+      display: block;
+    }
+    .offer-body h3 {
+      font-style: italic;
+      color: var(--section-text);
+      margin-bottom: 0.4em;
+    }
+    .offer-price {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--color-accent-gold);
+      line-height: 1;
+      margin: 28px 0 12px;
+    }
+    .offer-price small {
+      font-size: 0.9rem;
+      color: var(--section-text-muted);
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 10px;
+    }
+    .offer-list {
+      list-style: none;
+      padding: 0;
+      margin: 36px auto;
+      text-align: left;
+      max-width: 460px;
+    }
+    .offer-list li {
+      position: relative;
+      padding: 12px 0 12px 32px;
+      color: var(--section-text);
+      font-size: 0.98rem;
+      border-bottom: 1px solid var(--section-border);
+    }
+    .offer-list li:last-child { border-bottom: 0; }
+    .offer-list li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 18px;
+      width: 14px;
+      height: 14px;
+      background: var(--color-accent-gold);
+      clip-path: polygon(14% 47%, 0 60%, 39% 100%, 100% 22%, 84% 8%, 39% 70%);
+    }
+    .offer-scarcity {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid var(--color-accent-wine);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-accent-wine);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    .offer-close {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--section-text);
+      margin: 0 0 28px;
+    }
+    .offer-card .btn {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      min-height: 58px;
+    }
+
+    /* ============================================================
+       BLOQUE 7 — FAQ (alt, verde oscuro)
+       ============================================================ */
+    .faq {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .faq details {
+      border-bottom: 1px solid var(--section-border);
+      padding: 0;
+    }
+    .faq details:first-of-type { border-top: 1px solid var(--section-border); }
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 26px 56px 26px 0;
+      position: relative;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--section-text);
+      transition: color 0.2s ease;
+    }
+    .faq summary:hover { color: var(--color-accent-gold); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+";
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1.7rem;
+      color: var(--color-accent-gold);
+      transition: transform 0.25s ease;
+      line-height: 1;
+    }
+    .faq details[open] summary::after {
+      content: "×";
+    }
+    .faq details > div {
+      padding: 0 56px 26px 0;
+      color: var(--section-text-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       FOOTER (feature)
+       ============================================================ */
+    .footer {
+      padding: 64px var(--section-pad-x) 96px;
+      background: var(--color-feature);
+      color: var(--color-text-on-dark);
+      text-align: center;
+      border-top: 1px solid var(--color-border-on-dark);
+    }
+    .footer .footer-logo {
+      height: 32px;
+      width: auto;
+      margin: 0 auto 24px;
+      mix-blend-mode: screen;
+      display: block;
+    }
+    .footer p {
+      color: var(--color-text-muted-on-dark);
+      font-size: 0.9rem;
+      margin: 4px 0;
+    }
+    .footer a:hover { color: var(--color-accent-gold); }
+
+    /* ============================================================
+       STICKY CTA (mobile)
+       ============================================================ */
+    .sticky-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--color-accent-gold);
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      display: none;
+    }
+    .sticky-cta .btn {
+      width: 100%;
+      min-height: 52px;
+    }
+    .sticky-cta[data-disabled="true"] { display: none !important; }
+    @media (max-width: 768px) {
+      .sticky-cta { display: block; }
+      body { padding-bottom: 84px; }
+    }
+
+    /* ============================================================
+       MOTION REDUCED
+       ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       BLOQUE 1 — HERO (feature, foto a sangre)
+       ============================================================ -->
+  <header class="hero" id="bloque-1">
+    <div class="hero-bg">
+      <img src="URL_HERO" alt="LA SALA — pasillo de entrada" loading="eager" width="1280" height="720" />
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-warm" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="brand-bar">
+        <img src="URL_LOGO" alt="LA SALA" width="160" height="40" />
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">La Sala · Sesión en vivo</span>
+        <h1>Qué <em>ajustar</em> y qué <em>sostener</em> cuando el mercado no responde</h1>
+        <p class="hero-subline">90 minutos para distinguir cuándo el silencio del mercado pide movimiento y cuándo pide paciencia.</p>
+        <p class="lead">Un marco aplicable + una decisión tomada en directo.</p>
+        <div class="btn-row">
+          <a href="URL_CTA" class="btn btn-primary">Reservar mi lugar</a>
+          <a href="#bloque-2" class="btn btn-ghost">Ver qué te llevas</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         BLOQUE 2 — LOS 4 ENTREGABLES (light, crema)
+         ============================================================ -->
+    <section class="section" id="bloque-2">
+      <div class="container">
+        <span class="eyebrow">Los entregables</span>
+        <h2 class="section-title">Lo que te <em>llevas</em></h2>
+        <span class="rule-gold" aria-hidden="true"></span>
+        <p class="section-lead">Cuatro entregables concretos. No teoría suelta — marco aplicable, señales reproducibles y una decisión propia ya tomada.</p>
+
+        <div class="deliverables">
+          <article class="deliverable-card">
+            <span class="num">01</span>
+            <p><strong>La distinción entre información del mercado y prueba del mercado</strong> — cuándo lo que recibes es dato, cuándo es veredicto.</p>
+          </article>
+          <article class="deliverable-card">
+            <span class="num">02</span>
+            <p><strong>Tres señales concretas</strong> para identificar cada escenario — aplicables a cualquier área de tu negocio.</p>
+          </article>
+          <article class="deliverable-card">
+            <span class="num">03</span>
+            <p><strong>Un dispositivo de auto-observación</strong> para distinguir cuándo lo que sientes es intuición legítima y cuándo es patrón de complacencia activado.</p>
+          </article>
+          <article class="deliverable-card">
+            <span class="num">04</span>
+            <p><strong>Una decisión propia</strong> tomada en directo mientras estamos juntas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOQUE 3 — PARA QUIÉN ES / NO ES (alt, verde oscuro)
+         ============================================================ -->
+    <section class="section alt" id="bloque-3">
+      <div class="container">
+        <span class="eyebrow">Cualificación</span>
+        <h2 class="section-title">Para quién es / para quién <em>NO</em> es</h2>
+        <span class="rule-gold" aria-hidden="true"></span>
+        <p class="section-lead">La Sala está calibrada para un perfil específico. Si no encaja, mejor que lo sepas antes de entrar.</p>
+
+        <div class="audience-grid">
+          <article class="audience-card is-yes">
+            <h3>Es para ti <em>si</em>:</h3>
+            <ul class="audience-list is-yes">
+              <li>Tienes trayectoria en tu negocio — ya tomaste decisiones y viste sus consecuencias.</li>
+              <li>Te encuentras ante el silencio del mercado y no sabes qué mover y qué sostener.</li>
+              <li>Reconoces esto: <em>“Sé qué me pasa, pero no sé qué hacer cuando aparece la duda.”</em></li>
+              <li>Estás dispuesta a invertir, estar presente 90 minutos y concentrarte.</li>
+            </ul>
+          </article>
+
+          <article class="audience-card is-no">
+            <h3><em>NO</em> es para ti si:</h3>
+            <ul class="audience-list is-no">
+              <li>Estás empezando o no tienes infraestructura de negocio todavía.</li>
+              <li>Buscas tácticas, fórmulas o transformaciones rápidas.</li>
+              <li>Lo que necesitas es pricing genérico, no un marco de decisión.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOQUE 4 — DETALLES OPERATIVOS (feature, negro)
+         ============================================================ -->
+    <section class="section feature" id="bloque-4">
+      <div class="container">
+        <span class="eyebrow">Los detalles</span>
+        <h2 class="section-title">Cuándo, dónde, <em>cómo</em></h2>
+        <span class="rule-gold" aria-hidden="true"></span>
+        <p class="section-lead">Información operativa, sin letra chica.</p>
+
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="label">Fecha y hora</span>
+            <span class="value">Martes 2 de junio<br/>10:00 AM Chile</span>
+            <span class="sub">Argentina y Uruguay 11:00 · México 09:00 · España 16:00</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Duración</span>
+            <span class="value">90 minutos</span>
+            <span class="sub">En vivo, una sola sesión.</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Modalidad</span>
+            <span class="value">Google Meet</span>
+            <span class="sub">Link enviado tras la compra.</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Grabación</span>
+            <span class="value">Solo para asistentes</span>
+            <span class="sub">No disponible para venta posterior.</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Inversión</span>
+            <span class="value price">USD 47</span>
+            <span class="sub">Pago único · acceso inmediato.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOQUE 5 — QUIÉN CONDUCE (light, crema)
+         ============================================================ -->
+    <section class="section" id="bloque-5">
+      <div class="container">
+        <span class="eyebrow">Quién conduce</span>
+        <h2 class="section-title">Quién conduce <em>La Sala</em></h2>
+        <span class="rule-gold" aria-hidden="true"></span>
+
+        <div class="host">
+          <!-- Reemplazar el placeholder por <img src="URL_KATHERINNE" ...> -->
+          <div class="host-photo">
+            <div class="placeholder">Foto de Katherinne — Reemplazar</div>
+          </div>
+          <div class="host-body">
+            <h3>Katherinne Paz</h3>
+            <p>Dirige el Portal de Autoría, escribe la newsletter <em>En Voz Alta</em> y conduce el podcast <em>Idioma Mujer</em>.</p>
+            <p>Creó la Metodología de Autoría que sostiene BRAVA — el atelier donde mujeres con trayectoria interrumpen el patrón de complacencia y reconstruyen el negocio desde autoridad interna genuina.</p>
+            <span class="signature">— Katherinne</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOQUE 6 — OFERTA / CTA FINAL (feature, negro)
+         ============================================================ -->
+    <section class="section feature" id="bloque-6">
+      <div class="container">
+        <div class="offer-wrap">
+          <article class="offer-card">
+            <div class="offer-banner">Acceso inmediato</div>
+            <div class="offer-body">
+              <span class="offer-pretitle">La Sala · Sesión en vivo</span>
+              <h3>Qué ajustar y qué sostener cuando el mercado no responde</h3>
+
+              <div class="offer-price">
+                USD 47
+                <small>Pago único · Cupos limitados</small>
+              </div>
+
+              <span class="offer-scarcity">Aforo reducido</span>
+
+              <ul class="offer-list">
+                <li>Marco para distinguir información de prueba del mercado.</li>
+                <li>Tres señales concretas, aplicables a cualquier área del negocio.</li>
+                <li>Dispositivo de auto-observación: intuición vs. complacencia.</li>
+                <li>Una decisión propia tomada en directo.</li>
+                <li>Grabación disponible solo para asistentes.</li>
+              </ul>
+
+              <p class="offer-close"><em>Si reconociste la pregunta, entra.</em></p>
+
+              <a href="URL_CTA" class="btn btn-primary" aria-label="Reservar mi lugar en La Sala">Reservar mi lugar</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOQUE 7 — FAQ (alt, verde oscuro)
+         ============================================================ -->
+    <section class="section alt" id="bloque-7">
+      <div class="container">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2 class="section-title">Antes de <em>entrar</em></h2>
+        <span class="rule-gold" aria-hidden="true"></span>
+
+        <div class="faq">
+          <details>
+            <summary>¿Qué pasa si no puedo asistir en vivo?</summary>
+            <div>La Sala se transmite una sola vez. La grabación queda disponible para quienes compraron acceso. No se vende después del evento — si reservas, puedes verla a tu ritmo, pero el marco está pensado para activarse en vivo.</div>
+          </details>
+          <details>
+            <summary>¿Cómo recibo el link de la sesión?</summary>
+            <div>Tras completar el pago recibes un correo con el link de Google Meet y los recordatorios automáticos. Si no llega en pocos minutos, revisa promociones/spam y escríbenos.</div>
+          </details>
+          <details>
+            <summary>¿Es para cualquier tipo de negocio?</summary>
+            <div>La Sala asume que ya tienes trayectoria, tomaste decisiones y viste consecuencias. El marco es transversal — sirve a servicios, productos, formación. Si recién empiezas o no tienes infraestructura todavía, no es el momento.</div>
+          </details>
+          <details>
+            <summary>¿Hay reembolso?</summary>
+            <div>No. La Sala es una sesión en vivo con cupo limitado. Al reservar, entiendes que tu lugar queda comprometido. Si tienes dudas sobre si es para ti, lee con calma el bloque “Para quién es / no es”.</div>
+          </details>
+          <details>
+            <summary>¿En qué idioma se imparte?</summary>
+            <div>Español, en vivo, sin traducción simultánea.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (feature)
+       ============================================================ -->
+  <footer class="footer">
+    <img class="footer-logo" src="URL_LOGO" alt="LA SALA" width="120" height="32" />
+    <p>LA SALA — un espacio de Katherinne Paz · BRAVA Atelier.</p>
+    <p>© <span id="year">2026</span> · Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- ============================================================
+       STICKY CTA (mobile) — desactivar con data-disabled="true"
+       ============================================================ -->
+  <div class="sticky-cta" data-disabled="false">
+    <a href="URL_CTA" class="btn btn-primary">Reservar mi lugar — USD 47</a>
+  </div>
+
+  <script defer>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
