@@ -84,24 +84,24 @@ Abre `portada.png` y `portada_guias.png` con Read y revisa:
 
 Itera hasta que se vea como las referencias y entrega `portada.png` (1080×1920) con SendUserFile.
 
-## Paleta de marca (Portal de Autoría, Brand Book 2026)
+## Paleta de marca (vigente)
 
 | Color | HEX | Uso en portada |
 |---|---|---|
-| Burgundy | `#6B1C2A` | titulares sobre fondos claros |
-| Esmeralda | `#1B4332` | acento / fondos |
+| Crema lima | `#ECFEB2` | palabra clave en Owners sobre foto oscurecida (color de firma) |
 | Marfil | `#F5EDE0` | texto serif sobre foto oscurecida |
-| Oro | `#C6963C` | palabra clave en Owners sobre foto oscurecida |
-| Cálido Negro | `#1A1614` | capa translúcida sobre la foto (en vez de negro puro) |
+| Cobalto | `#1E3FA0` | títulos sobre fondos claros (crema lima o marfil) |
+| Frambuesa | `#9C2F5A` | acento sobre fondos claros |
+| Cálido negro | `#1A1614` | capa translúcida sobre la foto (en vez de negro puro) |
 
-Receta probada sobre foto: capa Cálido Negro al 45 %, serif en Marfil y palabra Owners en Oro:
+Cobalto y Frambuesa son oscuros: sobre una foto oscurecida no se leen, úsalos solo sobre fondos claros. Evita la capa en Cobalto sobre fotos con personas: tiñe la piel.
+
+Receta probada sobre foto: capa Cálido negro al 45 %, serif en Marfil y palabra Owners en Crema lima:
 
 ```bash
 --darken 0.45 --overlay-color "#1A1614" \
---line "serif|no seguía mi cuenta, pero||#F5EDE0" --line "bold|me leía||#C6963C"
+--line "serif|no seguía mi cuenta, pero||#F5EDE0" --line "bold|me leía||#ECFEB2"
 ```
-
-Portal de Autoría y @katherinnepaz_ son identidades separadas: no mezclar paletas. La lima `#E6FD55` es solo de @katherinnepaz_; `#83284E` está obsoleto.
 
 ## Fuentes
 
