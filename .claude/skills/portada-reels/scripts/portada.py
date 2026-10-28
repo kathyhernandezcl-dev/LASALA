@@ -175,7 +175,7 @@ def make_line(style, text, fonts, scale, color):
 
 
 def parse_lines(raw):
-    """'style|texto|align'  o  'break|0.58' para empezar otro bloque a esa altura."""
+    """'style|texto|align|color'  o  'break|0.58' para empezar otro bloque a esa altura."""
     blocks = [{"y": None, "lines": []}]
     for item in raw:
         parts = item.split("|")
@@ -186,13 +186,14 @@ def parse_lines(raw):
         if style not in STYLES:
             sys.exit(f"Estilo desconocido '{style}'. Usa: {', '.join(STYLES)} o break")
         text = parts[1] if len(parts) > 1 else ""
-        align = parts[2].strip() if len(parts) > 2 else "center"
-        blocks[-1]["lines"].append((style, text, align))
+        align = parts[2].strip() if len(parts) > 2 and parts[2].strip() else "center"
+        color = parts[3].strip() if len(parts) > 3 and parts[3].strip() else None
+        blocks[-1]["lines"].append((style, text, align, color))
     return [b for b in blocks if b["lines"]]
 
 
 def compose_block(lines, fonts, scale, color, gap):
-    layers = [(make_line(s, t, fonts, scale, color), a) for s, t, a in lines]
+    layers = [(make_line(s, t, fonts, scale, c or color), a) for s, t, a, c in lines]
     bw = max(l.width for l, _ in layers)
     bh = sum(l.height for l, _ in layers) + gap * (len(layers) - 1)
     block = Image.new("RGBA", (bw, bh), (0, 0, 0, 0))
@@ -272,7 +273,7 @@ def cmd_render(a):
     bg = load_background(a)
     bg = top_scrim(bg, a.scrim)
     if a.darken > 0:
-        bg = Image.blend(bg, Image.new("RGBA", bg.size, (0, 0, 0, 255)), a.darken)
+        bg = Image.blend(bg, Image.new("RGBA", bg.size, a.overlay_color), a.darken)
 
     color = a.color
     gap = int(W * a.gap)
@@ -315,14 +316,16 @@ def main():
     r.add_argument("--time", type=float, help="segundo del frame si --input es video")
     r.add_argument("--line", action="append", required=True,
                    help="'serif|texto', 'bold|texto', 'serif-xl|texto', align opcional "
-                        "'|left' o '|right', y 'break|0.58' para un segundo bloque")
+                        "'|left' o '|right', color opcional '|center|#C6963C', "
+                        "y 'break|0.58' para un segundo bloque")
     r.add_argument("--y", type=float, default=0.15, help="altura del primer bloque (fracción)")
     r.add_argument("--gap", type=float, default=0.018, help="espacio entre líneas (fracción del ancho)")
     r.add_argument("--scale", type=float, default=1.0, help="escala global del texto")
     r.add_argument("--color", default="#FFFFFF")
     r.add_argument("--shadow", type=float, default=0.45, help="0 = sin sombra")
     r.add_argument("--scrim", type=float, default=0.0, help="oscurecer la parte de arriba (0-1)")
-    r.add_argument("--darken", type=float, default=0.0, help="oscurecer toda la foto (0-1)")
+    r.add_argument("--darken", type=float, default=0.0, help="capa de color sobre toda la foto (0-1)")
+    r.add_argument("--overlay-color", default="#000000", help="color de la capa de --darken")
     r.add_argument("--focus-y", type=float, default=0.4, help="centro vertical del recorte (0-1)")
     r.add_argument("--depth", action="store_true", help="persona delante del título (requiere rembg)")
     r.add_argument("--guides", action="store_true", help="exporta además una vista con zonas seguras")

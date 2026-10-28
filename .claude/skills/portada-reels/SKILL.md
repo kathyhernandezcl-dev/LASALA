@@ -61,6 +61,7 @@ Sintaxis de `--line` (en orden de arriba a abajo):
 | `serif-xl\|texto` | Georgia Pro grande (cierre) |
 | `...\|texto\|left` o `\|right` | alinea esa línea al borde del bloque (por defecto centrada) |
 | `break\|0.57` | empieza un nuevo bloque a esa altura (fracción del alto) |
+| `...\|texto\|\|#C6963C` | color de esa línea (4.º campo; el 3.º es la alineación, puede ir vacío) |
 
 Con un video se puede pasar el video directo: `--input VIDEO.mp4 --time 3.2`.
 
@@ -70,6 +71,7 @@ Ajustes útiles:
 - `--focus-y 0.35` mueve el recorte vertical cuando la foto no es 9:16.
 - `--scrim 0.35` oscurece suavemente la parte de arriba si el fondo es muy claro; `--darken 0.15` oscurece toda la foto.
 - `--shadow 0.6` sombra más marcada (0 la quita).
+- `--overlay-color "#1A1614" --darken 0.45` capa de color translúcida sobre toda la foto.
 - `--depth` pone a la persona **delante** del título (como en "TIPOGRAFÍAS", donde la cabeza tapa parte de la palabra). Necesita `pip install rembg`; si no está o falla, el script sigue sin el efecto.
 
 ### 4. Revisar antes de entregar
@@ -81,6 +83,25 @@ Abre `portada.png` y `portada_guias.png` con Read y revisa:
 - Las tildes de mayúsculas (Í, Á, Ó) se ven completas.
 
 Itera hasta que se vea como las referencias y entrega `portada.png` (1080×1920) con SendUserFile.
+
+## Paleta de marca (Portal de Autoría, Brand Book 2026)
+
+| Color | HEX | Uso en portada |
+|---|---|---|
+| Burgundy | `#6B1C2A` | titulares sobre fondos claros |
+| Esmeralda | `#1B4332` | acento / fondos |
+| Marfil | `#F5EDE0` | texto serif sobre foto oscurecida |
+| Oro | `#C6963C` | palabra clave en Owners sobre foto oscurecida |
+| Cálido Negro | `#1A1614` | capa translúcida sobre la foto (en vez de negro puro) |
+
+Receta probada sobre foto: capa Cálido Negro al 45 %, serif en Marfil y palabra Owners en Oro:
+
+```bash
+--darken 0.45 --overlay-color "#1A1614" \
+--line "serif|no seguía mi cuenta, pero||#F5EDE0" --line "bold|me leía||#C6963C"
+```
+
+Portal de Autoría y @katherinnepaz_ son identidades separadas: no mezclar paletas. La lima `#E6FD55` es solo de @katherinnepaz_; `#83284E` está obsoleto.
 
 ## Fuentes
 
